@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SalaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::prefix('salas')->name('salas.')->group(function () {
+    Route::get('/', [SalaController::class, 'index'])->name('index');
+    Route::get('/create', [SalaController::class, 'createSala'])->name('create');
+    Route::post('/insert', [SalaController::class, 'insertSala'])->name('insert');
 });
 
 require __DIR__.'/auth.php';
