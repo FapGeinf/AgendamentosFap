@@ -9,4 +9,9 @@ class Sala extends Model
 {
     use HasFactory;
     protected $fillable = ['nome','descricao'];
+
+    public function reservas()
+    {
+           return $this->hasMany(Reserva::class);
+    }
 }

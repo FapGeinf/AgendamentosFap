@@ -51,5 +51,10 @@ class User extends Authenticatable
            return $this->belongsTo(Unidade::class, 'unidade_id', 'id');
     }
 
+    public function reservas()
+    {
+           return $this->hasMany(Reserva::class);
+    }
+
 
 }
