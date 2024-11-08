@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalaController;
+use App\Http\Controllers\UnidadeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,20 @@ Route::prefix('salas')->name('salas.')->group(function () {
     Route::get('/', [SalaController::class, 'index'])->name('index');
     Route::get('/create', [SalaController::class, 'createSala'])->name('create');
     Route::post('/insert', [SalaController::class, 'insertSala'])->name('insert');
+    Route::get('/edit',[SalaController::class,'editSala'])->name('edit');
+    Route::put('/update',[SalaController::class,'updateSala'])->name('update');
+    Route::delete('/delete',[SalaController::class,'deleteSala'])->name('delete');
 });
+
+Route::prefix('unidades')->name('unidades.')->group(function () {
+    Route::get('/', [UnidadeController::class, 'index'])->name('index');
+    Route::get('/create', [UnidadeController::class, 'createUnidade'])->name('create');
+    Route::post('/insert', [UnidadeController::class, 'insertUnidade'])->name('insert');
+    Route::get('/edit/{id}', [UnidadeController::class, 'editUnidade'])->name('edit');
+    Route::put('/update/{id}', [UnidadeController::class, 'updateUnidade'])->name('update');
+    Route::delete('/delete/{id}', [UnidadeController::class, 'deleteUnidade'])->name('delete');
+});
+
+
 
 require __DIR__.'/auth.php';
