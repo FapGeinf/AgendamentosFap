@@ -17,6 +17,14 @@ form, .register-link {
   width: 100%;
 }
 
+a {
+  color: #00658c;
+}
+
+a:hover {
+  color: #004c68;
+}
+
 .logo img {
   width: 50%;
 }
@@ -29,7 +37,19 @@ form, .register-link {
   width: 100%;
   max-width: 500px;
   height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.form-3-wrapper {
+  background: #fff;
+  padding: 50px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
