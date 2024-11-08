@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('unidadeSigla');
             $table->string('unidadeEmail');
             $table->unsignedBigInteger('gestor_id')->nullable();
-            $table->foreign('gestor_id')->references('id')->on('users')->onUpdate('cascade');
+            $table->foreign('gestor_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }
